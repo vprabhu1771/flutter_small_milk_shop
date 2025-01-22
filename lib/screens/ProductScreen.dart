@@ -85,7 +85,7 @@ class _ProductScreenState extends State<ProductScreen> {
                 title: Text(product.name),
                 subtitle: Text(
                   product.variants.isNotEmpty
-                      ? 'Variants: ${product.variants.length}'
+                      ? product.variants.map((variant) => variant.qty).join(', ')
                       : 'No variants available',
                 ),
                 onTap: () {
